@@ -1,72 +1,76 @@
 # Local 12 Weather Operations
 
-Professional mobile weather command center designed for broadcast meteorologists and weather operations teams.
+**Fully functional** professional mobile weather command center for broadcast meteorologists.
 
-## Overview
+## Live Demo
 
-A six-panel mobile interface that puts complete weather operations control in the palm of your hand. Built for real-time decision making during severe weather events.
+Open [`index.html`](index.html) in a browser (or deploy to GitHub Pages / any static host).
 
-> **UI Mockup** — See the detailed screen-by-screen breakdown in [`docs/UI_MOCKUP.md`](docs/UI_MOCKUP.md).
-
-## The Six Command Panels
-
-### 1. Live Radar Command Center
-- Multi-layer radar visualization
-- Storm tracks and motion vectors
-- Warning polygons (Tornado, Severe Thunderstorm, etc.)
-- Interactive timeline scrubber
-- Layer controls (Radar, Satellite, Lightning, Warnings)
-- Active warnings list with expiration times
-
-### 2. Forecast Model Comparison
-- Side-by-side HRRR / NAM / GFS / Euro model comparison
-- Confidence gauges for each model
-- Precipitation trend comparison (next 6 hours)
-- Resolution and last-update status
-- "Best Match" model highlighting
-
-### 3. Live Camera Matrix
-- Multi-camera live feeds (Downtown, Airport, Highways, etc.)
-- Feed routing matrix (PGM 1–4 assignment)
-- Live indicators and camera health status
-- Camera control (All Cameras, Favorites, Map View, PTZ)
-- On-air tally system
-
-### 4. Graphics & Rundown
-- Broadcast rundown with segment timing and status
-- Preview monitor with CG / Lower Thirds / Full Screen / Audio controls
-- Lower-third style selector (Default, Modern, Bold, Clean)
-- On-air status and segment control
-
-### 5. Alert Management
-- Severe weather workflow dashboard
-- Active alert counts (Severe, Tornado Watch, Flood Watch, Advisories)
-- Detailed active alerts with expiration times
-- EAS (Emergency Alert System) staging and readiness
-- Push / SMS / Email notification controls
-
-### 6. Engineering & System Health
-- Radar ingest status
-- Network and server health telemetry
-- System load metrics (CPU, Memory, Disk)
-- Latency monitoring
-- Recent system logs
-
-## UI Mockup
-
-A high-fidelity six-screen mobile mockup has been documented in detail:
-
-**→ [docs/UI_MOCKUP.md](docs/UI_MOCKUP.md)**
-
-The mockup shows a dark, professional interface optimized for control-room and severe-weather use, with consistent bottom navigation, live indicators, and broadcast-grade terminology (PGM, EAS, Lower Thirds, Tally).
-
-To permanently include the original image in the repository, add it as:
-
-```
-docs/mockup.png   (or .jpg)
+```bash
+# Or serve locally
+npx serve .
 ```
 
-and update the README image reference.
+## What Actually Works
+
+| Panel | Status | Data Source |
+|-------|--------|-------------|
+| **Live Radar** | ✅ Fully functional | LibreWXR (animated past + nowcast tiles) |
+| **Forecast Models** | ✅ Working | Open-Meteo (GFS + high-res blend / HRRR) |
+| **Live Alerts** | ✅ Working | National Weather Service API (OH + KY) |
+| **Camera Matrix** | ✅ Interactive | Demo feeds + live PGM routing |
+| **Graphics & Rundown** | ✅ Interactive | Full rundown control + lower-thirds |
+| **Engineering** | ✅ Live telemetry | Simulated real-time metrics + logs |
+
+### Radar
+- Animated radar over Cincinnati / Tri-State
+- Timeline scrubber + play/pause
+- Auto-refreshes every 5 minutes
+- Dark basemap optimized for severe weather
+
+### Alerts
+- Live severe weather alerts from the official NWS API
+- Counters for Severe / Tornado / Flood / Advisories
+- Displayed on both the Alerts panel and the Radar panel
+
+### Models
+- Real precipitation forecasts from Open-Meteo
+- HRRR-leaning blend vs GFS comparison
+- Confidence gauges and 6-hour precip bars
+
+## Six Command Panels
+
+1. **Live Radar Command Center** – multi-layer radar, timeline, active warnings  
+2. **Forecast Model Comparison** – HRRR / NAM / GFS / Euro with confidence  
+3. **Live Camera Matrix** – camera grid + PGM 1-4 routing matrix  
+4. **Graphics & Rundown** – broadcast rundown, preview, lower-thirds  
+5. **Alert Management** – severe workflow, EAS staging, notification actions  
+6. **Engineering & System Health** – ingest, latency, load, live logs  
+
+## Tech Stack
+
+- Pure HTML / CSS / JavaScript (no build step required)
+- Leaflet for the map
+- LibreWXR public radar API
+- National Weather Service API
+- Open-Meteo forecast API
+
+## Project Structure
+
+```
+index.html          # Main app shell
+styles.css          # Dark mobile UI matching the mockup
+js/
+  app.js            # Navigation & shared utilities
+  radar.js          # Animated radar (LibreWXR)
+  alerts.js         # Live NWS alerts
+  models.js         # Open-Meteo model comparison
+  cameras.js        # Camera matrix + routing
+  graphics.js       # Rundown & lower-thirds
+  engineering.js    # System health dashboard
+docs/
+  UI_MOCKUP.md      # Detailed UI specification
+```
 
 ## Target Users
 - Broadcast meteorologists
@@ -76,7 +80,8 @@ and update the README image reference.
 
 ## Status
 
-Concept / UI prototype stage.
+**Operational prototype** — core weather data (radar, alerts, models) is live.  
+Camera feeds are demo images; swap in real OHGO / KYTC / EarthCam endpoints for production.
 
 ## License
 
