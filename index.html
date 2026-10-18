@@ -10,7 +10,6 @@
 </head>
 <body>
   <div id="app">
-    <!-- Status bar -->
     <header class="top-bar">
       <div class="brand">
         <span class="logo">LOCAL<span>12</span></span>
@@ -18,11 +17,10 @@
       </div>
       <div class="status-pills">
         <span id="on-air-pill" class="pill on-air">ON AIR</span>
-        <span id="sys-status" class="pill healthy">All Systems Operational</span>
+        <span id="sys-status" class="pill healthy">ALL SYSTEMS OPERATIONAL</span>
       </div>
     </header>
 
-    <!-- Main content panels -->
     <main id="panels">
       <!-- 1. RADAR -->
       <section id="panel-radar" class="panel active">
@@ -34,7 +32,7 @@
         </div>
         <div id="radar-map"></div>
         <div class="radar-controls">
-          <button id="play-pause" class="ctrl-btn">⏸</button>
+          <button id="play-pause" class="ctrl-btn">II</button>
           <input type="range" id="timeline" min="0" max="0" value="0" />
           <span id="frame-time" class="live-badge">LIVE</span>
         </div>
@@ -165,25 +163,24 @@
       </section>
     </main>
 
-    <!-- Bottom navigation -->
     <nav class="bottom-nav">
       <button class="nav-btn active" data-panel="radar">
-        <span class="icon">📡</span><span>Radar</span>
+        <span class="icon">RAD</span><span>Radar</span>
       </button>
       <button class="nav-btn" data-panel="models">
-        <span class="icon">📊</span><span>Models</span>
+        <span class="icon">MOD</span><span>Models</span>
       </button>
       <button class="nav-btn" data-panel="cameras">
-        <span class="icon">📹</span><span>Cameras</span>
+        <span class="icon">CAM</span><span>Cameras</span>
       </button>
       <button class="nav-btn" data-panel="graphics">
-        <span class="icon">🎬</span><span>Graphics</span>
+        <span class="icon">GFX</span><span>Graphics</span>
       </button>
       <button class="nav-btn" data-panel="alerts">
-        <span class="icon">⚠️</span><span>Alerts</span>
+        <span class="icon">ALRT</span><span>Alerts</span>
       </button>
       <button class="nav-btn" data-panel="engineering">
-        <span class="icon">⚙️</span><span>Eng</span>
+        <span class="icon">ENG</span><span>Eng</span>
       </button>
     </nav>
   </div>
