@@ -6,6 +6,8 @@ Professional mobile weather command center designed for broadcast meteorologists
 
 A six-panel mobile interface that puts complete weather operations control in the palm of your hand. Built for real-time decision making during severe weather events.
 
+> **UI Mockup** — See the detailed screen-by-screen breakdown in [`docs/UI_MOCKUP.md`](docs/UI_MOCKUP.md).
+
 ## The Six Command Panels
 
 ### 1. Live Radar Command Center
@@ -49,6 +51,22 @@ A six-panel mobile interface that puts complete weather operations control in th
 - System load metrics (CPU, Memory, Disk)
 - Latency monitoring
 - Recent system logs
+
+## UI Mockup
+
+A high-fidelity six-screen mobile mockup has been documented in detail:
+
+**→ [docs/UI_MOCKUP.md](docs/UI_MOCKUP.md)**
+
+The mockup shows a dark, professional interface optimized for control-room and severe-weather use, with consistent bottom navigation, live indicators, and broadcast-grade terminology (PGM, EAS, Lower Thirds, Tally).
+
+To permanently include the original image in the repository, add it as:
+
+```
+docs/mockup.png   (or .jpg)
+```
+
+and update the README image reference.
 
 ## Target Users
 - Broadcast meteorologists
